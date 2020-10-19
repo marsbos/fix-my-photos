@@ -1,0 +1,56 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-filename-extension": "off",
+    "no-var": "error",
+    "brace-style": "error",
+    "prefer-template": "error",
+    "radix": "error",
+    "space-before-blocks": "error",
+    "import/prefer-default-export": "off",
+    "rest-spread-spacing": "off",
+    "react/prop-types": "off",
+    "no-nested-ternary": "off",
+    "import/order": "off",
+    "no-unused-vars": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-console": "warn",
+    "react/no-array-index-key": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-curly-newline": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "** /*.test.js",
+        "**/*.test.jsx",
+        "** /*.test.tsx",
+        "**/*.spec.js",
+        "** /*.spec.jsx",
+        "**/*.spec.tsx"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}
