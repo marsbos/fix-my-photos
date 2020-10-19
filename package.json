@@ -8,7 +8,7 @@
     "lint:fix": "eslint ./src --fix",
     "build": "webpack --mode development",
     "start": "webpack-cli serve --mode development --config ./webpack.config.dev.js",
-    "server": "node ./src/server/server",
+    "server": "node ./server/server",
     "dev": "concurrently \"npm start\" \"npm run server\""
   },
   "repository": {
