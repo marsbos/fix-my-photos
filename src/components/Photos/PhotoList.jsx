@@ -11,12 +11,15 @@ import { AddPhoto } from './AddPhoto'
 
 /**
  * Container for photo components.
- * It is responsible for orchestrating the components by maintaining & providing specific minimal state.
+ * It is responsible for orchestrating the components,
+ * by maintaining & providing specific minimal state & callback functions.
  */
 export const PhotoList = () => {
-  const [getPhotos, status, photosFromFetch] = useFetchWithProgress(
-    photoService.getPhoto
-  )
+  const [
+    getPhotosRequest,
+    getPhotosRequestStatus,
+    photosFromFetch
+  ] = useFetchWithProgress(photoService.getPhoto)
   const [photos, setPhotos] = useState()
 
   // The filter is an object containing keys which are the same as the photo object keys/fields.
@@ -30,14 +33,16 @@ export const PhotoList = () => {
   const updatePhoto = useCallback((updatedPhoto) => {
     console.log('Update photo', updatedPhoto)
   }, [])
+
   /**
    * Memoized callback for adding photos.
    */
   const addPhoto = useCallback(() => {
     // New photo is added, we only need to re-fetch
-    getPhotos()
-  }, [getPhotos])
+    getPhotosRequest()
+  }, [getPhotosRequest])
 
+  // Run effect with this state: photosFromFetch, filter.
   useEffect(() => {
     if (photosFromFetch) {
       if (filter) {
@@ -48,9 +53,10 @@ export const PhotoList = () => {
     }
   }, [photosFromFetch, filter])
 
+  // Run effect with this state: getPhotos.
   useEffect(() => {
-    getPhotos()
-  }, [getPhotos])
+    getPhotosRequest()
+  }, [getPhotosRequest])
 
   return (
     <>
@@ -60,7 +66,7 @@ export const PhotoList = () => {
         photoFilters={<PhotoFilters setFilter={setFilter} />}
       />
       <ApiProgressWrapper
-        loading={status}
+        loading={getPhotosRequestStatus}
         loader={<CircularProgress color='secondary' />}
         render={<PhotoGrid updatePhoto={updatePhoto} photos={photos} />}
       />
