@@ -1,5 +1,10 @@
 import wretch from 'wretch'
 
+/**
+ * Creates a 'resource' with the given endpoint.
+ * @param {*} endpoint The API's endpoint.
+ * @returns Crud functions to be used in a service.
+ */
 export const createResource = (endpoint) => {
   const resource = wretch().url(endpoint)
 
