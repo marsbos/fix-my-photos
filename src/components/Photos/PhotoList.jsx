@@ -13,7 +13,7 @@ import { photoFilter } from '../filters/photoFilters'
  * It is responsible for orchestrating the components by maintaining & providing specific minimal state.
  */
 export const PhotoList = () => {
-  const [getPhotos, status, photosFromfetch] = useFetchWithProgress(
+  const [getPhotos, status, photosFromFetch] = useFetchWithProgress(
     photoService.getPhoto
   )
   const [photos, setPhotos] = useState()
@@ -31,10 +31,14 @@ export const PhotoList = () => {
   }, [])
 
   useEffect(() => {
-    if (photosFromfetch) {
-      setPhotos([...photosFromfetch])
+    if (photosFromFetch) {
+      if (filter) {
+        setPhotos([...photosFromFetch.filter(photoFilter(filter))])
+      } else {
+        setPhotos([...photosFromFetch])
+      }
     }
-  }, [photosFromfetch])
+  }, [photosFromFetch, filter])
 
   useEffect(() => {
     getPhotos()

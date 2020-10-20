@@ -11,6 +11,10 @@ You have a collection of holiday photos but unfortunately some photos are 'broke
 ## The process/timing
 
 I started this assignment the weekend before this week's scheduled shipment to Acato and soon I had a great idea for an app. So I started working on it, but by the end of the day, I felt unhappy. I started all over with a new idea (fix-my-photos). So, already I had some code I could re-use for this new project. That's the reason some commits could be done quite fast.
+Most time was spent on two things:
+
+- Creating a clean solid 'architecture' in which components have only one concern and are 'managed' by a container.
+- Using and styling the Material-UI components. (because I am a bit of a perfectionist ;))
 
 ## Project setup
 
@@ -51,10 +55,10 @@ No routing required for this project.
 
 ## Improvements/not so happy about
 
-- Filtering: The filter component is too tightly coupled to the domain (it uses props/keys of the photo domain model):
+- Filtering: The photo filter component is too tightly coupled to the domain (it uses props/keys of the photo domain model):
 
 ```
 setFilterValue('failed')...
 ```
 
--
+- I spent some time on creating a solution for tracking requests status: that part took a bit too long. On the other hand, I don't mind doing some extra work in the evening: it was part of my private projects.
