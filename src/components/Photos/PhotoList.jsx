@@ -8,6 +8,7 @@ import { PhotoGrid } from './PhotoGrid'
 import { PhotoFilters } from './PhotoFilters'
 import { photoFilter } from '../filters/photoFilters'
 import { AddPhoto } from './AddPhoto'
+import { PhotoGridItem } from './PhotoGridItem'
 
 /**
  * Container for photo components.
@@ -68,7 +69,18 @@ export const PhotoList = () => {
       <ApiProgressWrapper
         loading={getPhotosRequestStatus}
         loader={<CircularProgress color='secondary' />}
-        render={<PhotoGrid updatePhoto={updatePhoto} photos={photos} />}
+        render={
+          <PhotoGrid>
+            {photos &&
+              photos.map((photo, idx) => (
+                <PhotoGridItem
+                  key={idx}
+                  photo={photo}
+                  updatePhoto={updatePhoto}
+                />
+              ))}
+          </PhotoGrid>
+        }
       />
     </>
   )
