@@ -7,6 +7,7 @@ import { MenuBar } from '../Menu/MenuBar'
 import { PhotoGrid } from './PhotoGrid'
 import { PhotoFilters } from './PhotoFilters'
 import { photoFilter } from '../filters/photoFilters'
+import { AddPhoto } from './AddPhoto'
 
 /**
  * Container for photo components.
@@ -29,6 +30,13 @@ export const PhotoList = () => {
   const updatePhoto = useCallback((updatedPhoto) => {
     console.log('Update photo', updatedPhoto)
   }, [])
+  /**
+   * Memoized callback for adding photos.
+   */
+  const addPhoto = useCallback(() => {
+    // New photo is added, we only need to re-fetch
+    getPhotos()
+  }, [getPhotos])
 
   useEffect(() => {
     if (photosFromFetch) {
@@ -48,6 +56,7 @@ export const PhotoList = () => {
     <>
       <MenuBar
         title='Fix-My-Photos'
+        addPhoto={<AddPhoto onAddPhoto={addPhoto} />}
         photoFilters={<PhotoFilters setFilter={setFilter} />}
       />
       <ApiProgressWrapper
