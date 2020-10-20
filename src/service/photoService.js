@@ -7,8 +7,6 @@ const photoResource = createResource('api/photos')
  */
 export const photoService = {
   getPhoto: (id) => photoResource.get(id).json(),
-  searchPhoto: (searchTerm) => photoResource.get(`?q=${searchTerm}`).json(),
   addPhoto: (undo) => photoResource.post(undo).json(),
-  updatePhoto: (id, undo) => photoResource.put(id, undo).json(),
-  deletePhoto: (id) => photoResource.del(id).json()
+  updatePhoto: (id, undo) => photoResource.put(id, undo).json()
 }
