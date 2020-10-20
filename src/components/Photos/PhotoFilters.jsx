@@ -38,7 +38,7 @@ export const PhotoFilters = ({ setFilter }) => {
       }
       label={
         <Typography variant='body1' color='primary' className={classes.label}>
-          Failed photos only
+          Broken photos only
         </Typography>
       }
     />

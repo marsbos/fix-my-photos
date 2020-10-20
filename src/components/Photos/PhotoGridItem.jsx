@@ -59,7 +59,6 @@ export const PhotoGridItem = ({ photo, updatePhoto }) => {
               <>
                 <ApiProgressWrapper
                   loader={<LinearProgress color='primary' />}
-                  loading={status}
                   render={<></>}
                 />
               </>
