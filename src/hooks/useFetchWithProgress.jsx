@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { ApiProgressStatus } from '../service/constants'
+import { ApiProgressStatus } from '../service/ApiProgressStatus'
 
 /**
  * React Hook for tracking progress while executing fetch requests.

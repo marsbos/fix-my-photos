@@ -1,6 +1,8 @@
+import { CircularProgress } from '@material-ui/core'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useFetchWithProgress } from '../../hooks/useFetchWithProgress'
 import { photoService } from '../../service/photoService'
+import { ApiProgressWrapper } from '../ApiProgress/ApiProgressWrapper'
 import { PhotoGrid } from './PhotoGrid'
 
 /**
@@ -21,11 +23,21 @@ export const PhotoList = () => {
   }, [])
 
   useEffect(() => {
+    if (photosFromfetch) {
+      setPhotos([...photosFromfetch])
+    }
+  }, [photosFromfetch])
+
+  useEffect(() => {
     getPhotos()
   }, [getPhotos])
   return (
     <>
-      <PhotoGrid updatePhoto={updatePhoto} photos={photosFromfetch} />
+      <ApiProgressWrapper
+        loading={status}
+        loader={<CircularProgress color='secondary' />}
+        render={<PhotoGrid updatePhoto={updatePhoto} photos={photos} />}
+      />
     </>
   )
 }

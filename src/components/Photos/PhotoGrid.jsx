@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => ({
  */
 export const PhotoGrid = ({ photos }) => {
   const classes = useStyles()
+  console.log('PhotoGrid', photos)
 
   return (
     <div className={classes.photoContainer}>
@@ -29,10 +30,7 @@ export const PhotoGrid = ({ photos }) => {
           <Typography variant='body1' color='primary'>
             My photos
           </Typography>
-          {photos &&
-            photos.map((photo) => {
-              photo.title
-            })}
+          {photos && photos.map((photo) => <p>{photo.title}</p>)}
         </GridList>
       </Grid>
     </div>

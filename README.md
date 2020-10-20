@@ -22,7 +22,8 @@ I already spent several hours (for a private project) trying to think of a solut
 
 ### UI
 
-React functional components, Material-UI
+React functional components, Material-UI  
+Material-UI has a lot of ready-to-use ui components for layout, input, etc.
 
 ### Routing
 
