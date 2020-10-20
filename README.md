@@ -4,7 +4,27 @@
 
 Fix-my-photo is a React application backed by a json-server api.
 
+### What does it do?
+
 You have a collection of holiday photos but unfortunately some photos are 'broken'. But you're in luck, fix-my-photo is able to fix your broken photos!
+
+## The process/timing
+
+I started this assignment the weekend before this week's scheduled shipment to Acato and soon I had a great idea for an app. So I started working on it, but by the end of the day, I felt unhappy. I started all over with a new idea (fix-my-photos). So, already I had some code I could re-use for this new project. That's the reason some commits could be done quite fast.
+
+## Project setup
+
+### Webpack
+
+Usually 'create-react-app' for React apps will do just fine. For this project however, I wanted to setup everything from scratch. So I created webpack config files and configured integration with the json-server.
+
+### JSON-Server
+
+The json-server package is being used for our backend. So the app can do 'real' api requests.
+
+### Scripts
+
+In the package.json I defined a couple of scripts necessary for the project. The 'dev' is the main script; it makes sure both json-server and webpack will startup so you'll have a nice local development environment.
 
 ## Design decisions
 
@@ -28,3 +48,13 @@ Material-UI has a lot of ready-to-use ui components for layout, input, etc.
 ### Routing
 
 No routing required for this project.
+
+## Improvements/not so happy about
+
+- Filtering: The filter component is too tightly coupled to the domain (it uses props/keys of the photo domain model):
+
+```
+setFilterValue('failed')...
+```
+
+-
