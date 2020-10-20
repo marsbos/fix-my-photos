@@ -13,7 +13,6 @@ import { ApiProgressStatus } from '../service/ApiProgressStatus'
  * Now, getPhotos can be used as an api call.
  * The status is updated each time the fetch changes to another state.
  * photosFromFetch holds the response.
- *
  * ```
  * @param {*} apiFetcher The api method to use.
  * @returns a fetch function, the fetch status and the response json data.

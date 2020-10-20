@@ -61,4 +61,4 @@ No routing required for this project.
 setFilterValue('failed')...
 ```
 
-- I spent some time on creating a solution for tracking requests status: that part took a bit too long. On the other hand, I don't mind doing some extra work in the evening: it was part of my private projects.
+- I spent some time on creating a solution for tracking requests status: that part took a bit too long. On the other hand, I don't mind doing some extra work in the evening as it was part of my private projects already.
