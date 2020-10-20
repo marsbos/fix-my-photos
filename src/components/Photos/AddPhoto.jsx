@@ -12,7 +12,11 @@ import { AddPhotoDialog } from './AddPhotoDialog'
  * @param {*} onAddPhoto The callback which will be called when a photo has been added.
  */
 export const AddPhoto = ({ onAddPhoto }) => {
-  const [add, status, addedPhoto] = useFetchWithProgress(photoService.addPhoto)
+  const [
+    addPhotoPostRequest,
+    addPhotoPostRequestStatus,
+    addedPhoto
+  ] = useFetchWithProgress(photoService.addPhoto)
   const [open, setOpen] = useState(false)
   const [newPhoto, setNewPhoto] = useState()
 
@@ -25,14 +29,16 @@ export const AddPhoto = ({ onAddPhoto }) => {
     },
     []
   )
+  // Sets newPhoto state
   const onAddClose = useCallback((photo) => {
     setNewPhoto(photo)
   }, [])
 
+  // Run effect with this state: newPhoto, add.
   useEffect(() => {
     if (newPhoto) {
       // post request:
-      add({
+      addPhotoPostRequest({
         ...newPhoto,
         ...{
           src: 'https://picsum.photos/300/180',
@@ -40,8 +46,9 @@ export const AddPhoto = ({ onAddPhoto }) => {
         }
       })
     }
-  }, [newPhoto, add])
+  }, [newPhoto, addPhotoPostRequest])
 
+  // Run effect with this state: addedPhoto, onAddPhoto.
   useEffect(() => {
     if (addedPhoto) {
       onAddPhoto(addedPhoto)
@@ -56,7 +63,7 @@ export const AddPhoto = ({ onAddPhoto }) => {
         startIcon={<Add />}
       >
         <ApiProgressWrapper
-          loading={status}
+          loading={addPhotoPostRequestStatus}
           loader={<CircularProgress fontSize='small' color='primary' />}
           render={<></>}
         />

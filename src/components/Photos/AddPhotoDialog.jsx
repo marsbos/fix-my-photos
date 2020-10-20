@@ -63,7 +63,7 @@ export const AddPhotoDialog = ({ open, onCancel, onAdd }) => {
           onClick={() => {
             setTitle(undefined)
             setBroken(undefined)
-            onAdd({ title, broken })
+            onAdd({ title, failed: broken })
           }}
           color='primary'
         >
