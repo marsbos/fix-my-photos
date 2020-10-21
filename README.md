@@ -48,6 +48,12 @@ In the package.json I defined a couple of scripts necessary for the project. The
 
 ## Design decisions
 
+### Libraries
+
+- React
+- Wretch for http wrapping/abstraction
+- Ramda for the photoFilters
+
 ### State
 
 While keeping the components as self-contained (stand-alone) as possible, I did not use any global state (management), but instead used local state and the principle of 'lifting state up'. This way components do not rely on any implemenation of statemanagement except React's built-in state hook.
