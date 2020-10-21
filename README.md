@@ -6,11 +6,11 @@ Fix-my-photo is a React application backed by a json-server api.
 
 ### What does it do?
 
-You have a collection of holiday photos but unfortunately some photos are 'broken'. But you're in luck, fix-my-photo is able to fix your broken photos!
+Imagine, you have a collection of holiday photos but unfortunately some photos are 'broken'. But you're in luck, fix-my-photo is able to fix your broken photos!
 
 ## The process/timing
 
-I started this assignment the weekend before this week's scheduled shipment to Acato and soon I had a great idea for an app. So I started working on it, but by the end of the day, I felt unhappy. I started all over with a new idea (fix-my-photos). So, already I had some code I could re-use for this new project. That's the reason some commits could be done quite fast.
+I started this assignment the weekend before this week's scheduled shipment to Acato and soon I had a great idea for an app. So I started working on it, but by the end of the day, I felt unhappy. I started all over again with a new idea (fix-my-photos). So, already I had some code I could re-use for this new project. That's the reason some commits could be done quite fast.
 Most time was spent on two things:
 
 - Creating a clean solid 'architecture' in which components have only one concern and are 'managed' by a container.
@@ -62,3 +62,14 @@ setFilterValue('failed')...
 ```
 
 - I spent some time on creating a solution for tracking requests status: that part took a bit too long. On the other hand, I don't mind doing some extra work in the evening as it was part of my private projects already.
+
+## Time spent
+
+**Total**: about 2.5 days
+
+1. Setting up project: 2 hours
+2. Setting up architecture & design (including building fetch & status solution): 8 hours
+3. Examining material ui components/icons/etc: 2 hours
+4. Building components: 6 hours
+
+I know I could have done it quite faster without all the styling etc, but I wanted to let you see I am also capable of doing some ui/styling stuff.

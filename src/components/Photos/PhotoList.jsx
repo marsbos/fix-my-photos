@@ -31,17 +31,26 @@ export const PhotoList = () => {
   /**
    * Memoized callback for updating photos. It accepts an updated photo.
    */
-  const updatePhoto = useCallback((updatedPhoto) => {
-    console.log('Update photo', updatedPhoto)
-  }, [])
+  const updatePhoto = useCallback(
+    (updatedPhoto) => {
+      // Photo is updated, we only need to re-fetch
+      console.log('Photo is updated', updatedPhoto)
+      getPhotosRequest()
+    },
+    [getPhotosRequest]
+  )
 
   /**
    * Memoized callback for adding photos.
    */
-  const addPhoto = useCallback(() => {
-    // New photo is added, we only need to re-fetch
-    getPhotosRequest()
-  }, [getPhotosRequest])
+  const addPhoto = useCallback(
+    (addedPhoto) => {
+      // New photo is added, we only need to re-fetch
+      console.log('Photo is added', addedPhoto)
+      getPhotosRequest()
+    },
+    [getPhotosRequest]
+  )
 
   // Run effect with this state: photosFromFetch, filter.
   useEffect(() => {

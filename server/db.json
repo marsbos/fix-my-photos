@@ -16,13 +16,13 @@
       "id": 3,
       "title": "Brussels",
       "src": "https://picsum.photos/300/180",
-      "failed": false
+      "failed": true
     },
     {
       "id": 4,
       "title": "Amsterdam",
       "src": "https://picsum.photos/300/180",
-      "failed": false
+      "failed": true
     },
     {
       "id": 5,
@@ -53,58 +53,6 @@
       "title": "Vienna",
       "src": "https://picsum.photos/300/180",
       "failed": true
-    },
-    {
-      "title": "MyPhoto",
-      "broken": true,
-      "src": "https://picsum.photos/300/180",
-      "failed": true,
-      "id": 10
-    },
-    {
-      "title": "eerr",
-      "broken": true,
-      "src": "https://picsum.photos/300/180",
-      "failed": true,
-      "id": 11
-    },
-    {
-      "title": "AMerfoort",
-      "src": "https://picsum.photos/300/180",
-      "failed": false,
-      "id": 12
-    },
-    {
-      "title": "Houten",
-      "src": "https://picsum.photos/300/180",
-      "failed": false,
-      "id": 13
-    },
-    {
-      "title": "Baarn",
-      "broken": false,
-      "src": "https://picsum.photos/300/180",
-      "failed": false,
-      "id": 14
-    },
-    {
-      "title": "w9we0e0e ",
-      "broken": true,
-      "src": "https://picsum.photos/300/180",
-      "failed": true,
-      "id": 15
-    },
-    {
-      "title": "UTREG",
-      "src": "https://picsum.photos/300/180",
-      "failed": false,
-      "id": 16
-    },
-    {
-      "title": "xszzsedd",
-      "src": "https://picsum.photos/300/180",
-      "failed": false,
-      "id": 17
     }
   ]
 }

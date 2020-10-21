@@ -1,3 +1,4 @@
+import { Settings } from '@material-ui/icons'
 import { createResource } from './fetchResource'
 
 const photoResource = createResource('api/photos')
@@ -7,6 +8,13 @@ const photoResource = createResource('api/photos')
  */
 export const photoService = {
   getPhoto: (id) => photoResource.get(id).json(),
-  addPhoto: (undo) => photoResource.post(undo).json(),
-  updatePhoto: (id, undo) => photoResource.put(id, undo).json()
+  addPhoto: (photo) => photoResource.post(photo).json(),
+  updatePhoto: (id, photo) => {
+    // simulate updating photo:
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(photoResource.put(id, photo).json())
+      }, 3000)
+    })
+  }
 }
