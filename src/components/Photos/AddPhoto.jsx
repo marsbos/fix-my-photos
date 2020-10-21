@@ -42,7 +42,7 @@ export const AddPhoto = ({ onAddPhoto }) => {
         ...newPhoto,
         ...{
           src: 'https://picsum.photos/300/180',
-          failed: newPhoto.broken || false
+          failed: newPhoto.failed
         }
       })
     }
