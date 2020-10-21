@@ -53,6 +53,7 @@ export const PhotoList = () => {
   )
 
   // Run effect with this state: photosFromFetch, filter.
+  // If photos are being fetched, the filter is 'automatically' run because of the statefull filter.
   useEffect(() => {
     if (photosFromFetch) {
       if (filter) {

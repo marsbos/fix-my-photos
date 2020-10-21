@@ -64,6 +64,7 @@ export const PhotoGridItem = ({ photo, updatePhoto }) => {
   const doUpdatePhotoRequest = () => {
     // set img class
     setIsFixing(true)
+    // do the APi call (update this photo)
     updatePhotosRequest(photo.id, { ...photo, ...{ failed: false } })
   }
 
